@@ -1,0 +1,484 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fonte-titulo:  "Bebas Neue", sans-serif;
+    --fonte-corpo:   "Alumni Sans SC", sans-serif;
+    --fonte-corpo-2: sans-serif 
+    --fonte-mono:    "Roboto Mono", monospace;
+
+    --verde:         #BA1200;
+    --verde-escuro:  #b30303;
+    --verde-claro:   #e50000;
+    --escuro:        #012e45; 
+    --escuro-2:      #508AA8; 
+    --escuro-3:      #9DD1F1; 
+    --texto:         #000000;
+    --texto-suave:   #000000;
+    --branco:        #ffffff;
+    --vermelho:      #BA1200;
+
+    --espacamento:   20px;
+    --raio:          8px;
+    --raio-grande:   16px;
+
+    --sombra:        0 4px 24px rgba(0, 0, 0, 0.45);
+    --sombra-verde:  0 0 20px rgba(49, 173, 161, 0.35);
+}
+
+/* =============================================
+   BASE
+   ============================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    font-size: 18px;
+    background-color: var(--escuro);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+
+
+/* =============================================
+   HEADER
+   ============================================= */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #2f434d;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #BA1200;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 0;
+    margin: 0 auto;
+}
+
+.logo-o {
+    font-family: var(--fonte-titulo);
+    font-size: 50px;   /* era 2.2rem */
+    color: var(--vermelho);
+    line-height: 1;
+}
+
+.logo-rest {
+    font-family: var(--fonte-titulo);
+    font-size: 50px;   /* era 2.2rem */
+    color: var(--branco);
+    letter-spacing: 4px;
+    line-height: 1;
+}
+
+.logo-tag {
+    font-family: var(--fonte-mono);
+    font-size: 20px;
+    color: var(--texto-suave);
+    letter-spacing: 3px;
+    width: 100%;
+    margin-top: -2px;
+    padding-left: 2px;
+}
+
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    margin-top: 0; 
+}
+
+.hero picture,
+.hero img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(13, 17, 23, 0.55) 0%,
+        rgba(13, 17, 23, 0.15) 40%,
+        rgba(13, 17, 23, 0.75) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 80px;
+    text-align: center;
+}
+
+.hero-slogan {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    letter-spacing: 6px;
+    color: var(--branco);
+    text-shadow: 0 2px 20px rgba(0,0,0,0.7);
+    margin-bottom: 28px;
+}
+
+
+/* =============================================
+   SEÇÕES — BASE
+   ============================================= */
+.secao {
+    padding: 90px 30px;
+    background: linear-gradient(
+        to bottom,
+        var(--escuro) 0%,
+        var(--escuro-2) 50%,
+        var(--escuro-3) 100%
+    )
+        background-size: 400% 400%;
+        animation: gradiente 8s ease infinite;
+
+}
+
+.secao-escura {
+    background-color: var(--escuro-2);
+}
+
+.secao-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.secao-inner-estreita {
+    max-width: 800px;
+}
+
+.secao-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: 5px;
+    color: var(--verde-claro);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.secao-subtitulo {
+    font-family: var(--fonte-corpo);
+    font-size: 1.1rem;
+    color: var(--texto-suave);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* =============================================
+   SOBRE — Intro + Números
+   ============================================= */
+.Introducao_Oscorp {
+    background: var(--escuro-3);
+    border-radius: var(--raio);
+    padding: 32px 36px;
+    margin-bottom: 60px;
+    box-shadow: var(--sombra);
+    font-size: 1.1rem;
+    text-align: left;
+    color: var(--texto);
+    line-height: 1.9;
+}
+
+.Introducao_Oscorp strong {
+    color: var(--verde-claro);
+}
+
+.Introducao_Oscorp em {
+    color: var(--texto-suave);
+    font-style: italic;
+}
+
+/* Números */
+.numeros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 24px;
+    text-align: center;
+}
+
+.numero-item {
+    background: var(--escuro-3);
+    border: 1px solid rgba(49, 173, 161, 0.2);
+    padding: 28px 16px;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.numero-item:hover {
+    border-color: var(--verde);
+    box-shadow: var(--sombra-verde);
+}
+
+.numero-valor {
+    display: block;
+    font-family: var(--fonte-titulo);
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    color: var(--verde);
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.numero-label {
+    font-family: var(--fonte-mono);
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+}
+
+/* =============================================
+   DIVISÕES — Cards
+   ============================================= */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.card {
+    background: var(--escuro-3);
+    border: 1px solid rgba(49, 173, 161, 0.15);
+    padding: 32px 28px;
+    text-align: left;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #BA1200;
+    box-shadow: var(--sombra-verde);
+}
+
+.card-icone {
+    font-size: 2rem;
+    margin-bottom: 14px;
+}
+
+.card h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: var(--verde-claro);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--texto-suave);
+    line-height: 1.7;
+}
+
+/* =============================================
+   LIDERANÇA — Equipe
+   ============================================= */
+.equipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+.membro {
+    background: var(--escuro-3);
+    border: 1px solid rgba(49, 173, 161, 0.15);
+    border-radius: var(--raio-grande);
+    padding: 36px 28px;
+    text-align: center;
+    transition: transform 0.25s, border-color 0.25s;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.membro:hover {
+    transform: translateY(-4px);
+    border-color: var(--verde);
+}
+
+.membro-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--verde-escuro), var(--verde-claro));
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: var(--escuro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    box-shadow: var(--sombra-verde);
+}
+
+.membro-nome {
+    font-family: var(--fonte-titulo);
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    color: var(--branco);
+    margin-bottom: 4px;
+}
+
+.membro-cargo {
+    font-family: var(--fonte-mono);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--verde);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.membro-bio {
+    font-size: 0.92rem;
+    color: var(--texto-suave);
+    line-height: 1.7;
+}
+
+.membro-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+   .site-footer {
+    border-top: 1px solid rgba(49, 173, 161, 0.2);
+    padding: 40px 30px;
+    text-align: center;
+     
+}
+
+.footer-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.footer-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1;       
+}
+
+.footer-inner {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.site-footer {
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* =============================================
+   RESPONSIVO — TABLET
+   ============================================= */
+@media (max-width: 1024px) {
+    .nav-principal {
+        gap: 18px;
+    }
+
+    .hero-slogan {
+        font-size: clamp(2rem, 7vw, 4rem);
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =============================================
+   RESPONSIVO — MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 20px;
+    }
+
+    .nav-principal {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-principal a {
+        font-size: 0.95rem;
+    }
+
+    .hero picture,
+    .hero img {
+        height: 70vh;
+    }
+
+    .hero-overlay {
+        padding-bottom: 50px;
+    }
+
+    .secao {
+        padding: 60px 20px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .equipe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .numeros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .Introducao_Oscorp {
+        padding: 22px 20px;
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+}
