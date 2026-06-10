@@ -382,6 +382,7 @@ body {
     border-top: 1px solid rgba(49, 173, 161, 0.2);
     padding: 40px 30px;
     text-align: center;
+    color: var(--branco)
      
 }
 
@@ -389,14 +390,6 @@ body {
     position: absolute;
     inset: 0;
     z-index: 0;
-}
-
-.footer-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    opacity: 1;       
 }
 
 .footer-inner {
